@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>pagination</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #1ce37c;
+      }
+
+      ul {
+        position: relative;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      ul li {
+        list-style: none;
+        line-height: 50px;
+        margin: 0 5px;
+      }
+
+      ul li.page-number {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+
+      ul li a {
+        display: block;
+        text-decoration: none;
+        color: #777;
+        font-weight: 600;
+        border-radius: 50%;
+      }
+
+      ul li.page-number:hover a,
+      ul li.page-number.active a {
+        background-color: #333;
+        color: #fff;
+      }
+
+      ul li:first-child {
+        margin-right: 30px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      ul li:last-child {
+        margin-left: 30px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <ul>
+        <li><a href="#" class="prev">< Prev</a></li>
+        <li class="page-number active"><a href="#">1</a></li>
+        <li class="page-number"><a href="#">2</a></li>
+        <li class="page-number"><a href="#">3</a></li>
+        <li class="page-number"><a href="#">4</a></li>
+        <li class="page-number"><a href="#">5</a></li>
+        <li class="page-number"><a href="#">6</a></li>
+        <li><a href="#" class="next"> Next ></a></li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      let $elePagination = $(".pagination");
+
+      $(function() {
+        $(".next").click(function() {
+          $elePagination
+            .find("li.page-number.active")
+            .next()
+            .addClass("active");
+
+          $elePagination
+            .find("li.page-number.active")
+            .prev()
+            .removeClass("active");
+        });
+
+        $(".prev").click(function() {
+          $elePagination
+            .find("li.page-number.active")
+            .prev()
+            .addClass("active");
+
+          $elePagination
+            .find("li.page-number.active")
+            .next()
+            .removeClass("active");
+        });
+
+        $(".page-number").click(function() {
+          $elePagination.find(".active").removeClass("active");
+
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

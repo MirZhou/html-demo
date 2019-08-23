@@ -1,0 +1,121 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>测试</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            #form {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            #form>div {
+                margin: 0 2em .5em;
+                padding: 1em;
+                border: 1px solid red;
+                text-align: center;
+            }
+
+            #form>div article+article {
+                margin-top: .5em;
+            }
+
+            #form>div article input {
+                width: 80%;
+                height: 3em;
+            }
+
+            ul li {
+                list-style: none;
+                display: block;
+                border: 1px solid yellow;
+            }
+
+            ul li+li {
+                margin-top: 1em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <ul id="content"></ul>
+            <div id="form">
+                <div>
+                    <article>
+                        <input id="name" type="text" />
+                    </article>
+                    <article>
+                        <input id="phone" type="text" />
+                    </article>
+                    <article>
+                        <input id="add" type="button" value="添加" />
+                    </article>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                let rows = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+                let fromIndex = 6;
+                let insertIndex = 2;
+
+                if (fromIndex <= insertIndex) {
+                    console.log("%c error", "color:red;");
+                    return;
+                }
+
+                console.log("from index " + fromIndex + " val:" + rows[fromIndex]);
+                console.log("insert index " + insertIndex + " val:" + rows[insertIndex]);
+
+                console.log("move after:" + rows);
+
+                // 先删除要移动的元素
+                let removeValues = rows.splice(fromIndex, 1);
+
+                // 将要移动的元素插入到指定位置
+                rows.splice(insertIndex, 0, removeValues);
+
+                console.log("move before:" + rows);
+
+                console.log("move backward start =========");
+                let moveIndex = 2;
+                let moveAfterIndex = 6;
+
+                if (moveAfterIndex <= moveIndex) {
+                    console.log("%c error", "color:red;");
+                    return;
+                }
+
+                console.log("move index " + moveIndex + " val:" + rows[moveIndex]);
+                console.log("move after index " + moveAfterIndex + " val:" + rows[moveAfterIndex]);
+
+                console.log("move after:" + rows);
+
+                // 先删除要移动的元素
+                removeValues = rows.splice(moveIndex, 1);
+
+                rows.splice(moveAfterIndex, 0, removeValues);
+                console.log("move before:" + rows);
+            });
+
+            $("#add").click(function () {
+                var name = $("#name").val();
+                var phone = $("#phone").val();
+
+                $("#content").append("<li>姓名：" + name + "&nbsp; 手机号：" + phone + "</li>");
+            });
+        </script>
+    </body>
+
+</html>
