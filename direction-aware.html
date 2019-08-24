@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Direction aware card hover effects</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(
+          0deg,
+          #0b74cb 0%,
+          #0b74cb 50%,
+          #fff 50%,
+          #fff 100%
+        );
+      }
+
+      .container {
+        max-width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        transform-style: preserve-3d;
+      }
+
+      .container .card {
+        position: relative;
+        width: 180px;
+        height: 240px;
+        background: #fff;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        overflow: hidden;
+        transform-style: preserve-3d;
+      }
+
+      .container:hover .card {
+        transform: perspective(500px) rotateY(30deg);
+      }
+
+      .container .card:hover {
+        transform: perspective(500px) rotateY(0deg);
+      }
+
+      .container .card:hover ~ .card {
+        transform: perspective(500px) rotateY(-30deg);
+      }
+
+      .container .card h2 {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 3em;
+        background-color: #2196f3;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        transition: box-shadow 0.5s;
+      }
+
+      .container .card:hover h2 {
+        color: #2196f3;
+        background-color: #fff;
+        box-shadow: 0 0 0 150px #2196ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h2>1</h2>
+      </div>
+      <div class="card">
+        <h2>2</h2>
+      </div>
+      <div class="card">
+        <h2>3</h2>
+      </div>
+      <div class="card">
+        <h2>4</h2>
+      </div>
+      <div class="card">
+        <h2>5</h2>
+      </div>
+    </div>
+  </body>
+</html>
