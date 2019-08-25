@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>3D Marquee Text Animation 2</title>
+
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,800&display=swap");
+
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: radial-gradient(#673ab7, #190838);
+                font-family: "Poppins", sans-serif;
+                overflow: hidden;
+            }
+
+            .box {
+                position: absolute;
+                width: 1200px;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                overflow: hidden;
+                transform-style: preserve-3d;
+            }
+
+            .box.box1 {
+                background: #673ab7;
+                transform-origin: right;
+                transform: perspective(500px) translateX(-50%) rotateY(-15deg);
+            }
+
+            .box.box2 {
+                background: #40158c;
+                transform-origin: left;
+                transform: perspective(500px) translateX(50%) rotateY(15deg);
+            }
+
+            .box.box1 h2 {
+                color: #fff;
+            }
+
+            .box.box2 h2 {
+                color: rgba(255, 255, 255, 0.2);
+                left: -100%;
+            }
+
+            .box h2 {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+                left: 0;
+                font-size: 8em;
+                animation: animate 15s linear infinite;
+            }
+
+            @keyframes animate {
+                0% {
+                    transform: translate(2400px);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box box1">
+            <h2>可用于具有闪电接口且支持 iOS 10 或更新版本的所有设备，包括 iPod touch、iPad 和 iPhone。</h2>
+        </div>
+        <div class="box box2">
+            <h2>可用于具有闪电接口且支持 iOS 10 或更新版本的所有设备，包括 iPod touch、iPad 和 iPhone。</h2>
+        </div>
+    </body>
+</html>
