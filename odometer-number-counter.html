@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Odometer Number Counter</title>
+
+        <link rel="stylesheet" href="scripts/odometer/themes/odometer-theme-car.css">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .img-bg {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 20px;
+                border-radius: 50%;
+                overflow: hidden;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .img-bg img {
+                max-width: 100%;
+            }
+
+            h2 {
+                margin-top: 20px;
+                font-family: consolas;
+                text-align: center;
+                font-size: 2em;
+            }
+
+            .odometer{
+                font-size: 4em;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="img-bg">
+                <img src="images/logo-Eros.jpg" alt="logo" />
+            </div>
+            <div id="odometer" class="odometer">000000</div>
+            <h2>Eros·Zhou</h2>
+        </div>
+
+        <script src="scripts/odometer/odometer.min.js"></script>
+        <script>
+            setTimeout(function(){
+                odometer.innerHTML = 175999;
+            });
+        </script>
+    </body>
+</html>
