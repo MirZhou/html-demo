@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Wrap Text Around Circle</title>
+
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", sans-serif;
+            }
+
+            body {
+                background-color: #000;
+            }
+
+            section {
+                position: relative;
+                width: 100%;
+                padding: 20px 50px 50px;
+            }
+
+            .circle {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .circle img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .circle.circle1 {
+                width: 500px;
+                height: 500px;
+                float: left;
+                border-radius: 50%;
+                margin: 20px;
+                shape-outside: circle();
+            }
+
+            .circle.circle2 {
+                width: 300px;
+                height: 300px;
+                float: right;
+                border-radius: 50%;
+                margin: 20px;
+                shape-outside: circle();
+            }
+
+            section h2 {
+                color: #fff;
+                font-size: 2em;
+                margin-bottom: 10px;
+            }
+
+            section p {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="circle circle1">
+                <img src="images/icon-man-1000x1000.jpg" alt="icon-man" />
+            </div>
+            <div class="circle circle2">
+                <img src="images/avatar_1.jpg" alt="avatar" />
+            </div>
+            <div>
+                <h2>Walden</h2>
+                <p>
+                    Walden by noted transcendentalist Henry David Thoreau, is a reflection upon simple living in natural surroundings. The work is part personal declaration of independence, social
+                    experiment, voyage of spiritual discovery, satire, and manual for self-reliance. First published in 1854, it details Thoreau's experiences over the course of two years, two months,
+                    and two days in a cabin he built near Walden Pond, amidst woodland owned by his friend and mentor Ralph Waldo Emerson, near Concord, Massachusetts. The book compresses the time
+                    into a single calendar year and uses passages of four seasons to symbolize human development.By immersing himself in nature, Thoreau hoped to gain a more objective understanding of
+                    society through personal introspection. Simple living and self-sufficiency were Thoreau's other goals, and the whole project was inspired by transcendentalist philosophy, a central
+                    theme of the American Romantic Period. As Thoreau made clear in his book, his cabin was not in wilderness but at the edge of town, about two miles (3 km) from his family home.
+                    Henry David Thoreau was an American author, poet, and philosopher, who is best known for his works Waldena treatise about living in concert with the natural worldand Civil
+                    Disobedience, in which he espoused the need to morally resist the actions of an unjust state. Thoreau s work heavily reflects the ideologies of the American transcendentalists, and
+                    he has long been considered a leading figure in the movement along with Ralph Waldo Emerson, Bronson Alcott, and, at first, Nathaniel Hawthorne (who changed his views later in
+                    life). In addition to his writing, which totaled more than twenty volumes, Thoreau was an active abolitionist, and lectured regularly against the Fugitive Slave Law. Thoreau died
+                    in 1862, and is buried along with Louisa May Alcott, Ellery Channing, and other notable Americans in Sleepy Hollow Cemetery in Concord, Massachusetts.
+                </p>
+            </div>
+        </section>
+    </body>
+</html>
