@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>3D Flip Clock</title>
+
+        <link rel="stylesheet" href="scripts/flipclock/flipclock.css" />
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #222;
+            }
+
+            .clock {
+                width: auto;
+            }
+
+            .flip-clock-dot {
+                background-color: #ccc;
+            }
+
+            .flip-clock-meridium a {
+                color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock"></div>
+
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script src="scripts/flipclock/flipclock.js"></script>
+        <script>
+            $(function() {
+                let clock = $(".clock").FlipClock({
+                    clockFace: "TwelveHourClock"
+                });
+            });
+        </script>
+    </body>
+</html>
