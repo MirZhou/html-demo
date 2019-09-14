@@ -38,6 +38,7 @@ new Vue({
                 .sort((a, b) => a.created - b.created)
                 .sort((a, b) => (a.favorite === b.favorite) ? 0 : (a.favorite ? -1 : 1));
         },
+        // 计算笔记行数
         linesCount() {
             if (this.selectedNote) {
                 return this.selectedNote.content.split(/\r\n|\r|\n/).length;
@@ -45,6 +46,7 @@ new Vue({
 
             return 0;
         },
+        // 计算笔记单词数
         wordsCount() {
             if (this.selectedNote) {
                 let content = this.selectedNote.content;
@@ -60,6 +62,7 @@ new Vue({
 
             return 0;
         },
+        // 计算笔记字符数
         charactersCount() {
             if (this.selectedNote) {
                 return this.selectedNote.content.split("").length;
