@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Creating a Scrollable Section using PagePiling.js</title>
+
+        <link rel="stylesheet" href="https://cdn.staticfile.org/pagePiling.js/1.5.6/jquery.pagepiling.css" />
+
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Poppins", sans-serif;
+            }
+
+            #pagePiling .section {
+                text-align: center;
+            }
+
+            #pagePiling .section h2 {
+                color: #fff;
+                font-size: 10em;
+                text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            #pagePiling .section.section1 {
+                background: url(images/full-image-1.jpg);
+                background-size: cover;
+            }
+            #pagePiling .section.section2 {
+                background: url(images/full-image-2.jpg);
+                background-size: cover;
+            }
+            #pagePiling .section.section3 {
+                background: url(images/full-image-3.jpg);
+                background-size: cover;
+            }
+            #pagePiling .section.section4 {
+                background: url(images/full-image-4.jpg);
+                background-size: cover;
+            }
+            #pagePiling .section.section5 {
+                background: url(images/full-image-5.jpg);
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pagePiling">
+            <div class="section section1"><h2>Section1</h2></div>
+            <div class="section section2"><h2>Section2</h2></div>
+            <div class="section section3"><h2>Section3</h2></div>
+            <div class="section section4"><h2>Section4</h2></div>
+            <div class="section section5"><h2>Section5</h2></div>
+        </div>
+
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/pagePiling.js/1.5.6/jquery.pagepiling.js"></script>
+        <script>
+            $(function() {
+                $("#pagePiling").pagepiling({
+                    navigation: {
+                        textColor: "#fff",
+                        bulletsColor: "#fff",
+                        position: "right",
+                        tooltips: ["Section1", "Section2", "Section3", "Section4", "Section5"]
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
