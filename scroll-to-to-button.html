@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Animated Scroll To Top Button Using Html CSS & JavaScript</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+            body {
+                height: 2000px;
+            }
+
+            #top {
+                position: fixed;
+                right: 40px;
+                bottom: 80px;
+                width: 180px;
+                height: 180px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="top">
+            <a href="#"><img src="./images/top.png" alt="btn-top"/></a>
+        </div>
+
+        <script>
+            let scroll = document.getElementById("top");
+
+            window.addEventListener("scroll", function() {
+                scroll.style.transform = "rotate(" + window.pageYOffset + "deg)";
+            });
+        </script>
+    </body>
+</html>
