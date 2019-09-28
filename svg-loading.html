@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quick CSS SVG Loading Animation Effects</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #042331;
+        }
+
+        svg{
+            width: 100px;
+            height: 100px;
+        }
+
+        svg rect{
+            width: 100px;
+            height: 100px;
+            fill: none;
+            stroke-width: 100px;
+            stroke :#00adff;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 50%;
+            animation: animate 2s linear infinite;
+        }
+
+        @keyframes animate {
+            to{
+                stroke-dashoffset: 250%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg>
+        <rect></rect>
+    </svg>
+</body>
+
+</html>
