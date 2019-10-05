@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>China regions</title>
+    </head>
+    <body>
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            let province = [];
+
+            $(function() {
+                let city, country;
+                $.getJSON("./scripts/china-regions/province.json", function(result) {
+                    province = result;
+                });
+                $.getJSON("./scripts/china-regions/city.json", function(result) {
+                    city = result;
+                });
+                $.getJSON("./scripts/china-regions/county.json", function(result) {
+                    country = result;
+                });
+
+                setTimeout(() => {
+                    province.forEach(function(item) {
+                        let citys = city[item.id];
+
+                        citys.forEach(function(city) {
+                            let counties = country[city.id];
+
+                            if (counties) {
+                                counties.forEach(function(itemCountry) {
+                                    itemCountry.value = itemCountry.name;
+
+                                    delete itemCountry.name;
+                                    delete itemCountry.city;
+                                });
+                            } else {
+                                counties = [{ id: "--", name: "" }];
+                            }
+
+                            city.value = city.name;
+                            city.child = counties;
+
+                            delete city.name;
+                            delete city.province;
+                        });
+
+                        item.value = item.name;
+                        item.child = citys;
+
+                        delete item.name;
+                    });
+
+                    document.write(JSON.stringify(province));
+                }, 500);
+            });
+        </script>
+    </body>
+</html>
