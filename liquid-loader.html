@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liquid Loader Animation Effects</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+        }
+
+        .loader{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #2196f3;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: inset 0 0 50px #000;
+        }
+
+        .loader::before{
+            content: "";
+            position: absolute;
+            top: -150%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            border-radius: 40%;
+            background: #111;
+            opacity: 0.8;
+            animation: animate-loader-before 12s linear infinite;
+        }
+
+        @keyframes animate-loader-before {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+.loader::after{
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 40%;
+    background: #111;
+    opacity: 0.9;
+    animation: animate-loader-after 5s linear infinite;
+}
+
+@keyframes animate-loader-after {
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
