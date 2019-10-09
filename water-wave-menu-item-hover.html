@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Water Wave Menu Item Hover Effects</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+        }
+
+        ul{
+            position:relative;
+        }
+
+        ul li{
+            position: relative;
+            list-style: none;
+        }
+
+        ul li a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 4em;
+            font-weight: 800;
+            color: rgba(255,255,255,0.1);
+        }
+
+        ul li a:before{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(./images/wave-blue.png);
+            -webkit-background-clip: text;
+            background-repeat: repeat-x;
+            animation: animate 2s linear infinite;
+            transition: 0.5s;
+            width: 0;
+            white-space: nowrap;
+        }
+
+        ul li:hover a:before {
+            width: 100%;
+        }
+
+        @keyframes animate {
+            0%{
+                background-position: 0px;
+            }
+            100%{background-position: 200px;}
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#" data-text="Home">Home</a></li>
+        <li><a href="#" data-text="About">About</a></li>
+        <li><a href="#" data-text="Services">Services</a></li>
+        <li><a href="#" data-text="Portfolio">Portfolio</a></li>
+        <li><a href="#" data-text="Our Team">Our Team</a></li>
+        <li><a href="#" data-text="Contact">Contact</a></li>
+    </ul>
+</body>
+
+</html>
