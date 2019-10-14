@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Pure CSS Circular Progress Bar</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800,900&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Roboto", sans-serif;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: #101010;
+            }
+
+            svg {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                z-index: 1000;
+            }
+
+            .container {
+                position: relative;
+                width: 900px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .container .card {
+                position: relative;
+                width: 250px;
+                height: 300px;
+                background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+
+            .container .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+
+            .container .card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -50%;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.03);
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .container .card .box .percent {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow: inset 0 0 50px #000;
+                background: #222;
+                z-index: 1000;
+            }
+
+            .container .card .box .percent .number {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+
+            .container .card .box .percent .number h2 {
+                color: #777;
+                font-size: 40px;
+                font-weight: 700;
+                transition: 0.5s;
+            }
+
+            .container .card:hover .box .percent .number h2 {
+                color: #fff;
+                font-size: 60px;
+            }
+
+            .container .card .box .percent .number h2 span {
+                color: #777;
+                font-size: 24px;
+                transition: 0.5s;
+            }
+
+            .container .card:hover .box .percent .number h2 span {
+                color: #fff;
+                font-size: 24px;
+            }
+
+            .container .card .box .percent svg {
+                animation: animate 3s linear infinite;
+            }
+
+            @keyframes animate {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .container .card .box .percent svg circle {
+                width: 100%;
+                height: 100%;
+                stroke: #191919;
+                stroke-width: 10;
+                stroke-linecap: round;
+                transform: translate(5px, 5px);
+            }
+
+            .container .card .box .percent svg circle:nth-child(2) {
+                stroke-dasharray: 440;
+                stroke-dashoffset: 440;
+            }
+
+            .container .card:nth-child(1) .box .percent svg circle:nth-child(2) {
+                stroke: #00ff43;
+                stroke-dashoffset: calc(440 - (440 * 90) / 100);
+            }
+            .container .card:nth-child(2) .box .percent svg circle:nth-child(2) {
+                stroke: #00a1ff;
+                stroke-dashoffset: calc(440 - (440 * 85) / 100);
+            }
+            .container .card:nth-child(3) .box .percent svg circle:nth-child(2) {
+                stroke: #ff04f7;
+                stroke-dashoffset: calc(440 - (440 * 60) / 100);
+            }
+
+            .container .card .box .text {
+                position: relative;
+                margin-top: 20px;
+                color: #777;
+                font-weight: 700;
+                font-size: 18px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: 0.5s;
+            }
+            .container .card:hover .box .text {
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <h2>90<span>%</span></h2>
+                        </div>
+                    </div>
+                    <h2 class="text">HTML</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <h2>85<span>%</span></h2>
+                        </div>
+                    </div>
+                    <h2 class="text">CSS</h2>
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <div class="percent">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle cx="70" cy="70" r="70"></circle>
+                        </svg>
+                        <div class="number">
+                            <h2>60<span>%</span></h2>
+                        </div>
+                    </div>
+                    <h2 class="text">JAVASCRIPT</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
