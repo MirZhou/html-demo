@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Test demo</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .header-nav {
+                position: relative;
+            }
+
+            .header-nav .header-nav-bg-before {
+                height: 5em;
+                background: linear-gradient(to right, #faf1b0, #fcec8c, #fce763);
+                z-index: 2;
+            }
+            .header-nav .header-nav-content {
+                position: absolute;
+                top: 0.75em;
+                left: 0;
+                width: 100%;
+                z-index: 3;
+            }
+            .header-nav .header-nav-content ul {
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+            }
+
+            .header-nav .header-nav-content ul li {
+                list-style: none;
+                text-align: center;
+            }
+
+            .header-nav .header-nav-content ul li + li {
+                margin-left: 1.2em;
+            }
+
+            .header-nav .header-nav-content ul li a {
+                display: inline-block;
+                width: 4em;
+            }
+            .header-nav .header-nav-content ul li a img {
+                width: 100%;
+                height: 4em;
+                max-height: 4em;
+                overflow: hidden;
+                object-fit: cover;
+            }
+
+            .header-nav .header-nav-content ul li a span {
+                display: inline-block;
+                height: 1.5em;
+                line-height: 1.5em;
+            }
+
+            .header-nav .header-nav-bg-circle {
+                position: absolute;
+                width: 100%;
+                height: 7em;
+                background: linear-gradient(to right, #faf1b0, #fcec8c, #fce763);
+                border-radius: 50%;
+                transform: translateY(-50%);
+                z-index: 1;
+            }
+
+            .header-fotter {
+                height: 3.5em;
+            }
+
+            .module {
+                margin: 0.5em auto;
+            }
+
+            .module .module-title {
+                position: relative;
+                width: 100%;
+                height: 1.5em;
+                line-height: 1.5em;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .module .module-title .line {
+                padding: 0 0.25em;
+                display: inline-flex;
+                width: 41vw;
+                height: 1.5em;
+                line-height: 1.5em;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .module .module-title .line-left {
+                flex-flow: row-reverse;
+            }
+
+            .module .module-title .line-right {
+                flex-flow: row;
+            }
+
+            .module .module-title .line span {
+                background-color: red;
+                border-radius: 50%;
+            }
+
+            .module .module-title .line span:nth-child(1) {
+                width: 0.6em;
+                height: 0.6em;
+                opacity: 1;
+            }
+
+            .module .module-title .line span:nth-child(2) {
+                width: 0.55em;
+                height: 0.55em;
+                opacity: 0.9;
+            }
+
+            .module .module-title .line span:nth-child(3) {
+                width: 0.5em;
+                height: 0.5em;
+                opacity: 0.8;
+            }
+
+            .module .module-title .line span:nth-child(4) {
+                width: 0.45em;
+                height: 0.45em;
+                opacity: 0.7;
+            }
+
+            .module .module-title .line span:nth-child(5) {
+                width: 0.4em;
+                height: 0.4em;
+                opacity: 0.6;
+            }
+
+            .module .module-title .line span:nth-child(6) {
+                width: 0.35em;
+                height: 0.35em;
+                opacity: 0.5;
+            }
+
+            .module .module-title .line span:nth-child(7) {
+                width: 0.3em;
+                height: 0.3em;
+                opacity: 0.4;
+            }
+
+            .module .module-title .line span:nth-child(8) {
+                width: 0.25em;
+                height: 0.25em;
+                opacity: 0.3;
+            }
+
+            .module .module-title .line span:nth-child(9) {
+                width: 0.2em;
+                height: 0.2em;
+                opacity: 0.2;
+            }
+
+            .module .module-title .line span:nth-child(10) {
+                width: 0.15em;
+                height: 0.15em;
+                opacity: 0.1;
+            }
+
+            .module .module-title .line span + span {
+                margin-left: 0.05em;
+            }
+
+            .module .module-title h3 {
+                background-color: red;
+                text-align: center;
+                font-size: 0.9em;
+                border-radius: 10px;
+                width: 18vw;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 头部导航 -->
+        <div class="header-nav">
+            <div class="header-nav-bg-before"></div>
+            <div class="header-nav-content">
+                <ul>
+                    <li>
+                        <a href=""><img src="./images/full-image-1.jpg" alt="" /><span>艺教</span></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/full-image-2.jpg" alt="" /><span>CBBA</span></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/full-image-3.jpg" alt="" /><span>寻根少年</span></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/full-image-4.jpg" alt="" /><span>资讯</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-nav-bg-circle"></div>
+        </div>
+
+        <div class="header-fotter"></div>
+
+        <!-- 艺教 -->
+        <article class="module">
+            <section class="module-title">
+                <div class="line line-left">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>艺教</h3>
+                <div class="line line-right">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <section class="module-content"></section>
+            <section class="module-show-more"></section>
+        </article>
+
+        <!-- CBBA -->
+        <article class="module">
+            <section class="module-title">
+                <div class="line line-left">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>CBBA</h3>
+                <div class="line line-right">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <section class="module-content"></section>
+            <section class="module-show-more"></section>
+        </article>
+
+        <!-- 寻根少年 -->
+        <article class="module">
+            <section class="module-title">
+                <div class="line line-left">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>寻根少年</h3>
+                <div class="line line-right">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <section class="module-content"></section>
+            <section class="module-show-more"></section>
+        </article>
+
+        <!-- 资讯 -->
+        <article class="module">
+            <section class="module-title">
+                <div class="line line-left">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <h3>资讯</h3>
+                <div class="line line-right">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+            <section class="module-content"></section>
+            <section class="module-show-more"></section>
+        </article>
+    </body>
+</html>
