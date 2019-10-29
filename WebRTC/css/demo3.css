@@ -1,0 +1,28 @@
+/* 滤镜 Start */
+
+/* 无效果 */
+.none {
+    filter: none;
+}
+
+/* 模糊度 */
+.blur {
+    filter: blur(3px);
+}
+
+/* 灰度（黑白） */
+.grayscale {
+    filter: grayscale(1);
+}
+
+/* 反转 */
+.invert {
+    filter: invert(1);
+}
+
+/* 深褐色 */
+.sepia {
+    filter: sepia(1);
+}
+
+/* 滤镜 End */
