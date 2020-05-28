@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                height: 0;
+            }
+            #bg {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+            }
+
+            #bg .bg-one {
+                height: 30vh;
+                background: red;
+            }
+
+            #bg .bg-two {
+                height: 20vh;
+                background: orange;
+            }
+
+            #bg .bg-three {
+                height: 40vh;
+                background: yellow;
+            }
+
+            #bg .bg-four {
+                height: 10vh;
+                background: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 背景 -->
+        <div id="bg">
+            <div class="bg-one"></div>
+            <div class="bg-two"></div>
+            <div class="bg-three"></div>
+            <div class="bg-four"></div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="content"></div>
+    </body>
+</html>
